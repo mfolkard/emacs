@@ -80,7 +80,7 @@ Turning this on will open it whenever cf-mode is loaded."
   :type 'boolean
   :group 'cf)
 
-(defcustom cf-manual-url "http://livedocs.macromedia.com/coldfusion/7/"
+(defcustom cf-manual-url "http://livedocs.macromedia.com/coldfusion/9/"
   "*URL at which to find CF manual.\
 You can replace \"en\" with your ISO language code."
   :type 'string
@@ -369,9 +369,13 @@ for \\[find-tag] (which see)."
   (browse-url cf-manual-url))
 
 ;; Define shortcut
+;;(define-key cf-mode-map
+;;  "\C-c\C-f"
+;;  'cf-search-documentation)
 (define-key cf-mode-map
   "\C-c\C-f"
-  'cf-search-documentation)
+'(lambda () (interactive)
+  (cf-comment-region)))
 
 ;; Define shortcut
 (define-key cf-mode-map
@@ -676,4 +680,13 @@ for \\[find-tag] (which see)."
 (fset 'ip
    "<cfif cgi.remote_addr eq \"10.0.0.144\">\C-j</cfif>\C-p\C-e\C-j\C-i")
 
+(defun cf-comment-region ()
+  "Insert a Coldfusion comment around a region."
+  (interactive)
+    (goto-char (region-end)) (insert "--->")
+    (goto-char (region-beginning)) (insert "<!---")
+)
+
+(global-set-key (kbd "\C-c\C-f") '(lambda () (interactive)
+  (cf-comment-region)))
 ;;; cf-mode.el ends here
