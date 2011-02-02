@@ -1,0 +1,7 @@
+#contributor : Mark Folkard
+#name : <cfloop list= ...>...</cfloop>
+#group : cfloop
+# --
+<cfloop list="#$1#" index="$2">
+  $3
+</cfloop>

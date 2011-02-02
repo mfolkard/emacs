@@ -1,0 +1,7 @@
+#contributor : Mark Folkard
+#name : <cfoutput query=...>...</cfoutput>
+#group : cfoutput
+# --
+<cfoutput query="$1">
+$>$2
+</cfoutput>

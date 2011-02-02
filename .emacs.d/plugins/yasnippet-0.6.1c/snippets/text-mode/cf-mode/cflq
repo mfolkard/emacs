@@ -1,0 +1,7 @@
+#contributor : Mark Folkard
+#name : <cfloop query= ...>...</cfloop>
+#group : cfloop
+# --
+<cfloop query="#$1#">
+  $2
+</cfloop>

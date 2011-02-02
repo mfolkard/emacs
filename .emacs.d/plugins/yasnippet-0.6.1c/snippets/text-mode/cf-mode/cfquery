@@ -1,0 +1,7 @@
+#contributor : Mark Folkard
+#name : <cfquery ...>...</cfquery>
+#group : cfquery
+# --
+<cfquery name="$1" datasource="#request.datasource#">
+$>$2
+</cfquery>

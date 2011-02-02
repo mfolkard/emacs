@@ -1,0 +1,7 @@
+#contributor : Mark Folkard
+#name : <cfoutput ...>...</cfoutput>
+#group : cfoutput
+# --
+<cfoutput>
+	`yas/selected-text`$0
+</cfoutput>
